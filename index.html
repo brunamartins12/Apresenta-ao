@@ -33,5 +33,10 @@
     </div>
   </div>
   <script src="script.js"></script>
+  const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('flipped');
+  });
 </body>
 </html>
