@@ -2,7 +2,7 @@ const cardBoard = document.querySelector("#cardboard");
 const placar = document.querySelector('#pontos');
 const erros = document.querySelector('#erro');
 let pontos = 0;
-let errro =0;
+let erro =0;
 const imgs = [
   "vue.svg",
   "angular.svg",
