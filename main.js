@@ -4,7 +4,7 @@ const erros = document.querySelector('#erro');
 let pontos = 0;
 let erro =0;
 const imgs = [
-  "vue.svg",
+  "",
   "angular.svg",
   "react.svg",
   "ember.svg",
