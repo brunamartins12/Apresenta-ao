@@ -1,11 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
+
+
+
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>CodePen - Jogo de Memória</title>
+
+    <link rel="canonical" href="https://codepen.io/adrianalcr/pen/NWpRZvy">
+  
+  
+  
+  
+<style>
+/***Style Adriana Lima ***/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0; 
+  box-sizing: border-box; 
+}
+
+body {
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  font-family: "Muli", sans-serif;
+  color: #fff;
+}
+
+a{
+  color: #fff;
+  list-style-type: none;
+}
+
+a:hover{
+  color: #f30698;
+  list-style-type: none;
+}
+
+.game-section {
+  width: 100%;
+  height: 100vh;
+}
+.fa {
+  color: #f30698;
+}
+.game-area {
+  background: #fff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  align-items: center;
+}
+/******Section*****/
+.container-fluid {
+  background: deepskyblue;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+/***Style Games *****/
+.memory-game {
+  padding-left: 60px;
+  position: relative;
+  display: flex;
+  width: 650px;
+  max-width: 100% !important;
+  height: 100vh;
+  margin: 60px;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 2px 2px 4px 2px rgb(0 0 0 / 30%);
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  border: #333 8px;
+  background: #341f44;
+  backface-visibility: hidden;
+  list-style: none;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
 </head>
-<body>
+
+<body translate="no">
   <meta content="target-densitydpi=160dpi, initial-scale=0, width=device-width, minimum-scale=1, maximum-scale=1" name="viewport">
 
 <body>
@@ -29,7 +161,7 @@
             <section class="memory-game">
               <div class="memory-card" data-framework="donut">
                 <!--Card 1-->
-                <img class="front-face" src="https://www.flaticon.com/br/icone-gratis/cao_1998627?term=animais&page=1&position=1&origin=search&related_id=1998627" alt="Donut" />
+                <img class="front-face" src="https://img.freepik.com/vetores-gratis/donut-voador-derretido-ilustracao-do-icone-dos-desenhos-animados_138676-2452.jpg?size=338&ext=jpg" alt="Donut" />
                 <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
               </div>
 
@@ -80,11 +212,11 @@
 
               <div class="memory-card" data-framework="Cat">
                 <!--Card 6-->
-                <img class="front-face" src="https://www.flaticon.com/br/sticker-gratis/crocodilo_4193310?term=animais&page=1&position=5&origin=search&related_id=4193310" alt="Crocodilo" />
+                <img class="front-face" src="https://image.freepik.com/vetores-gratis/gato-bonito-segurando-a-ilustracao-do-icone-dos-desenhos-animados-de-peixe-conceito-de-icone-de-comida-animal-isolado-estilo-flat-cartoon_138676-2171.jpg" alt="Cat" />
                 <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
               </div>
               <div class="memory-card" data-framework="Cat">
-                <img class="front-face" src="https://www.flaticon.com/br/sticker-gratis/crocodilo_4193310?term=animais&page=1&position=5&origin=search&related_id=4193310" alt="Crocodilo" />
+                <img class="front-face" src="https://image.freepik.com/vetores-gratis/gato-bonito-segurando-a-ilustracao-do-icone-dos-desenhos-animados-de-peixe-conceito-de-icone-de-comida-animal-isolado-estilo-flat-cartoon_138676-2171.jpg" alt="Cat" />
                 <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
               </div>
             </section>
@@ -92,9 +224,77 @@
           </div>
         </div>
         <!-- Seção Game End -->
+          <p>Designer By <a href="https://adrianalima.vercel.app">Adriana Lima</a></p>
 
-        <p>Imagens By <a href="https://www.flaticon.com/br/buscar?word=animais&type=sticker">flaticon</a></p>
+        <p>Imagens By <a href="https://br.freepik.com/catalyststuff">Freepick</a></p>
   </section>
 </body>
+  
+      <script id="rendered-js" >
+const cards = document.querySelectorAll(".memory-card");
+
+let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;
+
+function flipCard() {
+  if (lockBoard) return;
+  if (this === firstCard) return;
+
+  this.classList.add("flip");
+
+  if (!hasFlippedCard) {
+    hasFlippedCard = true;
+    firstCard = this;
+
+    return;
+  }
+
+  secondCard = this;
+  checkForMatch();
+}
+
+function checkForMatch() {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+  isMatch ? disableCards() : unflipCards();
+}
+
+function disableCards() {
+  firstCard.removeEventListener("click", flipCard);
+  secondCard.removeEventListener("click", flipCard);
+
+  resetBoard();
+}
+
+function unflipCards() {
+  lockBoard = true;
+
+  setTimeout(() => {
+    firstCard.classList.remove("flip");
+    secondCard.classList.remove("flip");
+
+    resetBoard();
+  }, 1500);
+}
+
+function resetBoard() {
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+}
+
+(function shuffle() {
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+  });
+})();
+
+cards.forEach(card => card.addEventListener("click", flipCard));
+//# sourceURL=pen.js
+    </script>
+
+  
 </body>
+
 </html>
