@@ -34,14 +34,14 @@ a:hover{
   color: #f30698;
 }
 .game-area {
-  background: #fff;
+  background: #a13b3b;
   padding-top: 30px;
   padding-bottom: 30px;
   align-items: center;
 }
 /******Section*****/
 .container-fluid {
-  background: deepskyblue;
+  background: rgb(148, 166, 172);
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -80,7 +80,7 @@ a:hover{
   position: absolute;
   display: flex;
   border: #333 8px;
-  background: #341f44;
+  background: #812ec0;
   backface-visibility: hidden;
   list-style: none;
 }
