@@ -283,4 +283,289 @@ cards.forEach(card => card.addEventListener("click", flipCard));
   
 </body>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<head>
+ 
+
+  <title> Jogo de Memória</title>
+  
+  
+  
+  
+<style>
+
+
+* {
+  padding: 0;
+  margin: 0; 
+  box-sizing: border-box; 
+}
+
+body {
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  font-family: "Muli", sans-serif;
+  color: #fff;
+}
+
+a{
+  color: #fff;
+  list-style-type: none;
+}
+
+a:hover{
+  color: #f30698;
+  list-style-type: none;
+}
+
+.game-section {
+  width: 100%;
+  height: 100vh;
+}
+.fa {
+  color: #f30698;
+}
+.game-area {
+  background: #fff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  align-items: center;
+}
+/******Section*****/
+.container-fluid {
+  background: deepskyblue;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+/***Style Games *****/
+.memory-game {
+  padding-left: 60px;
+  position: relative;
+  display: flex;
+  width: 650px;
+  max-width: 100% !important;
+  height: 100vh;
+  margin: 60px;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 2px 2px 4px 2px rgb(0 0 0 / 30%);
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  border: #333 8px;
+  background: #341f44;
+  backface-visibility: hidden;
+  list-style: none;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <meta content="target-densitydpi=160dpi, initial-scale=0, width=device-width, minimum-scale=1, maximum-scale=1" name="viewport">
+
+<body>
+  <section class="container-fluid section-padding-100-0 section-padding-0-100">
+    <div class="game-section spad wow fadeInUp">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-4">
+            <!--Seção Titulo-->
+            <div class=" container-fluid text-center">
+              <i class="fa-2x fa fa-graduation-cap"></i>
+              <div class="line"></div>
+              <h2>Exercício de memória</h2>
+              <p>Está preparado(a)? Esse jogo é bem fácil, você vai exercitar a sua memória.</p>
+
+            </div>
+          </div>
+          <br>
+          <!-- Jogo da Memória -->
+          <div class="col-8">
+            <section class="memory-game">
+              <div class="memory-card" data-framework="donut">
+                <!--Card 1-->
+                <img class="front-face" src="https://img.freepik.com/vetores-gratis/donut-voador-derretido-ilustracao-do-icone-dos-desenhos-animados_138676-2452.jpg?size=338&ext=jpg" alt="Donut" />
+                <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
+              </div>
+
+              <div class="memory-card" data-framework="donut">
+                <img class="front-face" src="https://img.freepik.com/vetores-gratis/donut-voador-derretido-ilustracao-do-icone-dos-desenhos-animados_138676-2452.jpg?size=338&ext=jpg" alt="" />
+                <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
+              </div>
+
+              <div class="memory-card" data-framework="pizza">
+                <!--Card 2-->
+                <img class="front-face" src="https://img.freepik.com/vetores-gratis/fatia-voadora-de-ilustracao-em-vetor-pizza-dos-desenhos-animados-vetor-isolado-conceito-de-fast-food-estilo-flat-cartoon_138676-1934.jpg?size=338&ext=jpg" alt="Pizza" />
+                <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
+              </div>
+              <div class="memory-card" data-framework="pizza">
+                <img class="front-face" src="https://img.freepik.com/vetores-gratis/fatia-voadora-de-ilustracao-em-vetor-pizza-dos-desenhos-animados-vetor-isolado-conceito-de-fast-food-estilo-flat-cartoon_138676-1934.jpg?size=338&ext=jpg" alt="Pizza" />
+                <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
+              </div>
+
+              <div class="memory-card" data-framework="dog">
+                <!--Card 3-->
+                <img class="front-face" src="https://img.freepik.com/vetores-gratis/cao-bonito-enfiando-a-lingua-para-fora-ilustracao-do-icone-dos-desenhos-animados_138676-2709.jpg?size=338&ext=jpg" alt="Dog" />
+                <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
+              </div>
+              <div class="memory-card" data-framework="dog">
+                <img class="front-face" src="https://img.freepik.com/vetores-gratis/cao-bonito-enfiando-a-lingua-para-fora-ilustracao-do-icone-dos-desenhos-animados_138676-2709.jpg?size=338&ext=jpg" alt="Dog" />
+                <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
+              </div>
+
+              <div class="memory-card" data-framework="queijo">
+                <!--Card 4-->
+                <img class="front-face" src="https://img.freepik.com/vetores-gratis/ilustracao-do-icone-dos-desenhos-animados-de-queijo_138676-2652.jpg?size=338&ext=jpg" alt="Queijo" />
+                <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
+              </div>
+              <div class="memory-card" data-framework="queijo">
+                <img class="front-face" src="https://img.freepik.com/vetores-gratis/ilustracao-do-icone-dos-desenhos-animados-de-queijo_138676-2652.jpg?size=338&ext=jpg" alt="Queijo" />
+                <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
+              </div>
+
+              <div class="memory-card" data-framework="elefante">
+                <!--Card 5-->
+                <img class="front-face" src="https://image.freepik.com/vetores-gratis/elefante-bonito-sentado-e-acenando-a-mao-dos-desenhos-animados-icone-ilustracao-vetorial_138676-2220.jpg" alt="Elefante" />
+                <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
+              </div>
+              <div class="memory-card" data-framework="elefante">
+                <img class="front-face" src="https://image.freepik.com/vetores-gratis/elefante-bonito-sentado-e-acenando-a-mao-dos-desenhos-animados-icone-ilustracao-vetorial_138676-2220.jpg" alt="Elefante" />
+                <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
+              </div>
+
+              <div class="memory-card" data-framework="Cat">
+                <!--Card 6-->
+                <img class="front-face" src="https://image.freepik.com/vetores-gratis/gato-bonito-segurando-a-ilustracao-do-icone-dos-desenhos-animados-de-peixe-conceito-de-icone-de-comida-animal-isolado-estilo-flat-cartoon_138676-2171.jpg" alt="Cat" />
+                <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
+              </div>
+              <div class="memory-card" data-framework="Cat">
+                <img class="front-face" src="https://image.freepik.com/vetores-gratis/gato-bonito-segurando-a-ilustracao-do-icone-dos-desenhos-animados-de-peixe-conceito-de-icone-de-comida-animal-isolado-estilo-flat-cartoon_138676-2171.jpg" alt="Cat" />
+                <img class="back-face" src="https://image.freepik.com/vetores-gratis/desenho-animado-de-gato-fofo_138676-2969.jpg" alt="Play" />
+              </div>
+            </section>
+            <!-- Jogo da Memória -->
+          </div>
+        </div>
+        <!-- Seção Game End -->
+         
+        
+  </section>
+</body>
+  
+      <script id="rendered-js" >
+const cards = document.querySelectorAll(".memory-card");
+
+let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;
+
+function flipCard() {
+  if (lockBoard) return;
+  if (this === firstCard) return;
+
+  this.classList.add("flip");
+
+  if (!hasFlippedCard) {
+    hasFlippedCard = true;
+    firstCard = this;
+
+    return;
+  }
+
+  secondCard = this;
+  checkForMatch();
+}
+
+function checkForMatch() {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+  isMatch ? disableCards() : unflipCards();
+}
+
+function disableCards() {
+  firstCard.removeEventListener("click", flipCard);
+  secondCard.removeEventListener("click", flipCard);
+
+  resetBoard();
+}
+
+function unflipCards() {
+  lockBoard = true;
+
+  setTimeout(() => {
+    firstCard.classList.remove("flip");
+    secondCard.classList.remove("flip");
+
+    resetBoard();
+  }, 1500);
+}
+
+function resetBoard() {
+  [hasFlippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+}
+
+(function shuffle() {
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+  });
+})();
+
+cards.forEach(card => card.addEventListener("click", flipCard));
+//# sourceURL=pen.js
+    </script>
+
+  
+</body>
+
 </html>
